@@ -43,7 +43,7 @@ Route::get('tournament/{name}', function ($name) {
                     ['name' => 'TO']
                 ],
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team1' => 'MU', 'team2' => 'MC', 'start' => '09:00', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'En cours', 'team1' => 'MU', 'team2' => 'MC', 'start' => '09:00', 'team1Score' => '', 'team2Score' => '', 'type' => 'Elimination'],
                     ['id' => 2, 'status' => 'Terminé', 'team1' => 'MU', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
                     ['id' => 2, 'status' => 'Terminé', 'team1' => 'MC', 'team2' => 'LI', 'start' => '', 'team1Score' => '3', 'team2Score' => '2', 'type' => 'Elimination'],
                     ['id' => 3, 'status' => 'Terminé', 'team1' => 'MU', 'team2' => 'MC', 'start' => '', 'team1Score' => '2', 'team2Score' => '2', 'type' => 'Poule'],
@@ -80,7 +80,7 @@ Route::get('tournament/{name}', function ($name) {
                     ['name' => 'TO']
                 ],
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team1' => 'MU', 'team2' => 'TO', 'start' => '09:00', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'En cours', 'team1' => 'MU', 'team2' => 'TO', 'start' => '09:00', 'team1Score' => '', 'team2Score' => '', 'type' => 'Elimination'],
                     ['id' => 2, 'status' => 'Terminé', 'team1' => 'MU', 'team2' => 'LI', 'start' => '', 'team1Score' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
                     ['id' => 3, 'status' => 'Terminé', 'team1' => 'MC', 'team2' => 'TO', 'start' => '', 'team1Score' => '2', 'team2Score' => '3', 'type' => 'Elimination'],
                 ]
@@ -180,7 +180,7 @@ Route::get('team/{name}', function ($name){
                 ],
                 'sport'     => 'Basketball',
                 'matchs' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MU', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
                     ['id' => 2, 'status' => 'Terminé', 'team2' => 'LI', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
                 ]
             ]);
