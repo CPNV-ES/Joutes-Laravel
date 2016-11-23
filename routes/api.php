@@ -18,6 +18,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 
+//Get all the tournaments
 Route::get('tournaments', function (){
     return response()->json([
         'tournaments' => [
@@ -28,6 +29,7 @@ Route::get('tournaments', function (){
     ]);
 });
 
+//Route for a define tournament
 Route::get('tournament/{name}', function ($name) {
     switch($name) {
         case 'Unihockey' :
