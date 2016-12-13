@@ -17,20 +17,34 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
+//Get all the tournaments
+Route::get('events', function (){
+    header('Access-Control-Allow-Origin: *');
+    return response()->json([
+        'events' => [
+            ['id' => '1', 'name' => 'Joutes 2017'],
+            ['id' => '2', 'name' => 'Tournoi Noël'],
+            ['id' => '3', 'name' => 'Joutes 2016'],
+            ['id' => '4', 'name' => 'La baston des profs'],
+            ['id' => '5', 'name' => 'Duel de classes'],
+        ]
+    ]);
+});
+
 
 //Get all the tournaments
-Route::get('tournaments', function (){
+Route::get('{event}/tournaments', function (){
     return response()->json([
         'tournaments' => [
             ['id' => '1', 'name' => 'Unihockey', 'sport' => 'Unihockey', 'place' => 'Salle de gym'],
-            ['id' => '1', 'name' => 'Basketball', 'sport' => 'Basketball', 'place' => 'Salle de gym'],
-            ['id' => '1', 'name' => 'Volley', 'sport' => 'Volley', 'place' => 'Piscine']
+            ['id' => '2', 'name' => 'Basketball', 'sport' => 'Basketball', 'place' => 'Salle de gym'],
+            ['id' => '3', 'name' => 'Volley', 'sport' => 'Volley', 'place' => 'Piscine']
         ]
     ]);
 });
 
 //Route for a define tournament
-Route::get('tournament/{name}', function ($name) {
+Route::get('{event}/tournament/{name}', function ($name) {
     switch($name) {
         case 'Unihockey' :
             return response()->json([
@@ -132,7 +146,8 @@ Route::get('tournament/{name}', function ($name) {
     }
 });
 
-Route::get('teams', function (){
+Route::get('{event}/teams', function (){
+    header('Access-Control-Allow-Origin: *');
     return response()->json([
         'teams' => [
             ['id' => '1', 'name' => 'MU', 'sport' => 'Unihockey'],
@@ -149,9 +164,9 @@ Route::get('teams', function (){
     ]);
 });
 
-Route::get('team/{name}', function ($name){
+Route::get('{event}/team/{id}', function ($name){
     switch($name) {
-        case 'MU' :
+        case '1' :
             return response()->json([
                 'type'  => 'equipe',
                 'id'    => '1',
@@ -169,7 +184,7 @@ Route::get('team/{name}', function ($name){
                 ]
             ]);
             break;
-        case 'MC':
+        case '2':
             return response()->json([
                 'type'  => 'equipe',
                 'id'    => '2',
@@ -187,7 +202,7 @@ Route::get('team/{name}', function ($name){
                 ]
             ]);
             break;
-        case 'LI':
+        case '3':
             return response()->json([
                 'type'  => 'equipe',
                 'id'    => '3',
@@ -205,7 +220,7 @@ Route::get('team/{name}', function ($name){
                 ]
             ]);
             break;
-        case 'quentin' :
+        case '4' :
             return response()->json([
                 'id'        => '4',
                 'type'      => 'personne',
@@ -219,7 +234,7 @@ Route::get('team/{name}', function ($name){
                 ]
             ]);
             break;
-        case 'stephane':
+        case '5':
             return response()->json([
                 'id'        => '5',
                 'type'      => 'personne',
@@ -233,7 +248,7 @@ Route::get('team/{name}', function ($name){
                 ]
             ]);
             break;
-        case 'malorie':
+        case '6':
             return response()->json([
                 'id'        => '6',
                 'type'      => 'personne',
