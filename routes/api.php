@@ -17,7 +17,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-//Get all the tournaments
+//Get all the events
 Route::get('events', function (){
     header('Access-Control-Allow-Origin: *');
     return response()->json([
@@ -34,6 +34,7 @@ Route::get('events', function (){
 
 //Get all the tournaments
 Route::get('{event}/tournaments', function (){
+    header('Access-Control-Allow-Origin: *');
     return response()->json([
         'tournaments' => [
             ['id' => '1', 'name' => 'Unihockey', 'sport' => 'Unihockey', 'place' => 'Salle de gym'],
@@ -45,6 +46,7 @@ Route::get('{event}/tournaments', function (){
 
 //Route for a define tournament
 Route::get('{event}/tournament/{name}', function ($name) {
+    header('Access-Control-Allow-Origin: *');
     switch($name) {
         case 'Unihockey' :
             return response()->json([
@@ -165,6 +167,7 @@ Route::get('{event}/teams', function (){
 });
 
 Route::get('{event}/team/{id}', function ($name){
+    header('Access-Control-Allow-Origin: *');
     switch($name) {
         case '1' :
             return response()->json([
