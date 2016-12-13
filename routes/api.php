@@ -166,9 +166,9 @@ Route::get('{event}/teams', function (){
     ]);
 });
 
-Route::get('{event}/team/{id}', function ($name){
+Route::get('{event}/team/{id}', function ($id){
     header('Access-Control-Allow-Origin: *');
-    switch($name) {
+    switch($id) {
         case '1' :
             return response()->json([
                 'type'  => 'equipe',
