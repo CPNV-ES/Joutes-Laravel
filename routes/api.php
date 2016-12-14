@@ -153,9 +153,22 @@ Route::get('{event}/teams', function (){
     return response()->json([
         'teams' => [
             ['id' => '1', 'name' => 'MU', 'sport' => 'Unihockey'],
-            ['id' => '1', 'name' => 'MC', 'sport' => 'Basketball'],
-            ['id' => '1', 'name' => 'LI', 'sport' => 'Volley'],
-            ['id' => '1', 'name' => 'TO', 'sport' => 'Football']
+            ['id' => '2', 'name' => 'MC', 'sport' => 'Basketball'],
+            ['id' => '3', 'name' => 'LI', 'sport' => 'Volley'],
+            ['id' => '4', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '5', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '6', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '7', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '8', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '9', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '10', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '11', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '12', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '13', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '14', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '15', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '16', 'name' => 'TO', 'sport' => 'Football'],
+            ['id' => '17', 'name' => 'TO', 'sport' => 'Football'],
         ],
         'participants' => [
             ['id' => '1', 'firstname' => 'Mickael', 'lastname' => 'Lacombe', 'sport' => 'Marche'],
@@ -166,7 +179,7 @@ Route::get('{event}/teams', function (){
     ]);
 });
 
-Route::get('{event}/team/{id}', function ($id){
+Route::get('{event}/team/{id}', function ($event, $id){
     header('Access-Control-Allow-Origin: *');
     switch($id) {
         case '1' :
@@ -178,12 +191,19 @@ Route::get('{event}/team/{id}', function ($id){
                 'participants' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
-                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier'],
+                    ['firstname' => 'Théo', 'lastname' => 'Zimmermann'],
+                    ['firstname' => 'Sébastion', 'lastname' => 'Martin']
                 ],
                 'sport'     => 'Football',
                 'matchs' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'LI', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'incoming', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'finish', 'team2' => 'LI', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+
+                    ['id' => 2, 'status' => 'finish', 'team2' => 'Poney', 'start' => '', 'ownScore' => '12', 'team2Score' => '14', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'finish', 'team2' => 'Les Warriors', 'start' => '', 'ownScore' => '9', 'team2Score' => '3', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'incoming', 'team2' => 'PourquoiPas', 'start' => '16:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'finish', 'team2' => 'Test', 'start' => '', 'ownScore' => '2', 'team2Score' => '5', 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -223,7 +243,187 @@ Route::get('{event}/team/{id}', function ($id){
                 ]
             ]);
             break;
-        case '4' :
+        case '4':
+            return response()->json([
+                'type'  => 'equipe',
+                'id'    => '3',
+                'name'  => 'WE',
+                'status' => 'Participe',
+                'participants' => [
+                    ['firstname' => 'Quentin', 'lastname' => 'Girard'],
+                    ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                ],
+                'sport'     => 'Unihockey',
+                'matchs' => [
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                ]
+            ]);
+            break;
+        case '5':
+            return response()->json([
+                'type'  => 'equipe',
+                'id'    => '3',
+                'name'  => 'BO',
+                'status' => 'Participe',
+                'participants' => [
+                    ['firstname' => 'Quentin', 'lastname' => 'Girard'],
+                    ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                ],
+                'sport'     => 'Unihockey',
+                'matchs' => [
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                ]
+            ]);
+            break;
+        case '6':
+            return response()->json([
+                'type'  => 'equipe',
+                'id'    => '3',
+                'name'  => 'CE',
+                'status' => 'Participe',
+                'participants' => [
+                    ['firstname' => 'Quentin', 'lastname' => 'Girard'],
+                    ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                ],
+                'sport'     => 'Unihockey',
+                'matchs' => [
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                ]
+            ]);
+            break;
+        case '7':
+            return response()->json([
+                'type'  => 'equipe',
+                'id'    => '3',
+                'name'  => 'LE',
+                'status' => 'Participe',
+                'participants' => [
+                    ['firstname' => 'Quentin', 'lastname' => 'Girard'],
+                    ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                ],
+                'sport'     => 'Unihockey',
+                'matchs' => [
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                ]
+            ]);
+            break;
+        case '8':
+            return response()->json([
+                'type'  => 'equipe',
+                'id'    => '3',
+                'name'  => 'PO',
+                'status' => 'Participe',
+                'participants' => [
+                    ['firstname' => 'Quentin', 'lastname' => 'Girard'],
+                    ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                ],
+                'sport'     => 'Unihockey',
+                'matchs' => [
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                ]
+            ]);
+            break;
+        case '10':
+            return response()->json([
+                'type'  => 'equipe',
+                'id'    => '3',
+                'name'  => 'NE',
+                'status' => 'Participe',
+                'participants' => [
+                    ['firstname' => 'Quentin', 'lastname' => 'Girard'],
+                    ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                ],
+                'sport'     => 'Unihockey',
+                'matchs' => [
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                ]
+            ]);
+            break;
+        case '11':
+            return response()->json([
+                'type'  => 'equipe',
+                'id'    => '3',
+                'name'  => 'RE',
+                'status' => 'Participe',
+                'participants' => [
+                    ['firstname' => 'Quentin', 'lastname' => 'Girard'],
+                    ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                ],
+                'sport'     => 'Unihockey',
+                'matchs' => [
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                ]
+            ]);
+            break;
+        case '12':
+            return response()->json([
+                'type'  => 'equipe',
+                'id'    => '3',
+                'name'  => 'BR',
+                'status' => 'Participe',
+                'participants' => [
+                    ['firstname' => 'Quentin', 'lastname' => 'Girard'],
+                    ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                ],
+                'sport'     => 'Unihockey',
+                'matchs' => [
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                ]
+            ]);
+            break;
+        case '13':
+            return response()->json([
+                'type'  => 'equipe',
+                'id'    => '3',
+                'name'  => 'AA',
+                'status' => 'Participe',
+                'participants' => [
+                    ['firstname' => 'Quentin', 'lastname' => 'Girard'],
+                    ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                ],
+                'sport'     => 'Unihockey',
+                'matchs' => [
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                ]
+            ]);
+            break;
+        case '14':
+            return response()->json([
+                'type'  => 'equipe',
+                'id'    => '3',
+                'name'  => 'JU',
+                'status' => 'Participe',
+                'participants' => [
+                    ['firstname' => 'Quentin', 'lastname' => 'Girard'],
+                    ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
+                    ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
+                ],
+                'sport'     => 'Unihockey',
+                'matchs' => [
+                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                ]
+            ]);
+            break;
+        case '15' :
             return response()->json([
                 'id'        => '4',
                 'type'      => 'personne',
@@ -237,7 +437,7 @@ Route::get('{event}/team/{id}', function ($id){
                 ]
             ]);
             break;
-        case '5':
+        case '16':
             return response()->json([
                 'id'        => '5',
                 'type'      => 'personne',
@@ -251,7 +451,7 @@ Route::get('{event}/team/{id}', function ($id){
                 ]
             ]);
             break;
-        case '6':
+        case '17':
             return response()->json([
                 'id'        => '6',
                 'type'      => 'personne',
