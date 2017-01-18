@@ -39,9 +39,9 @@ Route::get('{event_id}/tournaments', function ($event_id){
         default:
             return response()->json([
                 'tournaments' => [
-                    ['id' => 1, 'name' => 'Tounroi Unihockey', 'sport' => 'Unihockey', 'place' => 'Salle de gym'],
-                    ['id' => 2, 'name' => 'Tournoi Basket', 'sport' => 'Basketball', 'place' => 'Salle de gym'],
-                    ['id' => 3, 'name' => 'Tournoi Volley', 'sport' => 'Volley', 'place' => 'Piscine']
+                    ['id' => 1, 'name' => 'Tournoi Unihockey',  'sport' => 'Unihockey',     'place' => 'Salle de gym'],
+                    ['id' => 2, 'name' => 'Tournoi Basket',     'sport' => 'Basketball',    'place' => 'Salle de gym'],
+                    ['id' => 3, 'name' => 'Tournoi Volley',     'sport' => 'Volley',        'place' => 'Piscine']
                 ]
             ]);
     }
@@ -54,7 +54,7 @@ Route::get('{event_id}/tournament/{tournament_id}', function ($event_id, $tourna
         case 1 :
             return response()->json([
                 'id'        => 1,
-                'name'      => 'Tounnoi Unihockey',
+                'name'      => 'Tournoi Unihockey',
                 'sport'     => 'Unihockey',
                 'type'      => 'Poules et éliminations',
                 'place'     => 'Salle de gym',
@@ -136,17 +136,17 @@ Route::get('{event_id}/tournament/{tournament_id}/{group_matchs_id}', function (
                 'name'      => 'Poney',
                 'type'      => 'Poule',
                 'teams' => [
-                    ['id' => 1, 'name' => 'MU', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => '2', 'goalsAgainst' => '2', 'points' => '5'],
-                    ['id' => 2, 'name' => 'MC', 'matchesPlayed' => '3', 'matchesWin' => '1', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => '2', 'goalsAgainst' => '2', 'points' => '5'],
-                    ['id' => 3, 'name' => 'LI', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => '3', 'goalsAgainst' => '2', 'points' => '2'],
-                    ['id' => 4, 'name' => 'TO', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => '2', 'goalsAgainst' => '3', 'points' => '0']
+                    ['id' => 1, 'name' => 'MU', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 2, 'name' => 'MC', 'matchesPlayed' => '3', 'matchesWin' => '1', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 3, 'name' => 'LI', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => 3, 'goalsAgainst' => 2, 'points' => '2'],
+                    ['id' => 4, 'name' => 'TO', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => 2, 'goalsAgainst' => 3, 'points' => '0']
                 ],
                 'matches' => [
-                    ['id' => 1, 'name' => '1', 'status' => 'incoming', 'team1' => 'MU', 'team2' => 'MC', 'start' => '09:00', 'team1Score' => '', 'team2Score' => ''],
-                    ['id' => 2, 'name' => '2', 'status' => 'finish', 'team1' => 'MU', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '1'],
-                    ['id' => 3, 'name' => '3', 'status' => 'finish', 'team1' => 'MC', 'team2' => 'LI', 'start' => '', 'team1Score' => '3', 'team2Score' => '2'],
-                    ['id' => 4, 'name' => '4', 'status' => 'finish', 'team1' => 'MU', 'team2' => 'MC', 'start' => '', 'team1Score' => '2', 'team2Score' => '2'],
-                    ['id' => 5, 'name' => '5', 'status' => 'finish', 'team1' => 'LI', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '2'],
+                    ['id' => 1, 'name' => '1', 'status' => 'A venir',   'team1' => 'MU', 'team2' => 'MC', 'start' => '15:00', 'team1Score' => null,   'team2Score' => null],
+                    ['id' => 2, 'name' => '2', 'status' => 'Terminé',   'team1' => 'MU', 'team2' => 'TO', 'start' => '08:00', 'team1Score' => 3,  'team2Score' => 1],
+                    ['id' => 3, 'name' => '3', 'status' => 'Terminé',   'team1' => 'MC', 'team2' => 'LI', 'start' => '09:00', 'team1Score' => 3,  'team2Score' => 2],
+                    ['id' => 4, 'name' => '4', 'status' => 'Terminé',   'team1' => 'MU', 'team2' => 'MC', 'start' => '10:00', 'team1Score' => 2,  'team2Score' => 2],
+                    ['id' => 5, 'name' => '5', 'status' => 'Terminé',   'team1' => 'LI', 'team2' => 'TO', 'start' => '11:00', 'team1Score' => 3,  'team2Score' => 2],
                 ]
             ]);
             break;
@@ -156,17 +156,17 @@ Route::get('{event_id}/tournament/{tournament_id}/{group_matchs_id}', function (
                 'name'      => 'Cheval',
                 'type'      => 'Poule',
                 'teams' => [
-                    ['id' => 1, 'name' => 'MU', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => '2', 'goalsAgainst' => '2', 'points' => '5'],
-                    ['id' => 2, 'name' => 'MC', 'matchesPlayed' => '3', 'matchesWin' => '1', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => '2', 'goalsAgainst' => '2', 'points' => '5'],
-                    ['id' => 3, 'name' => 'LI', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => '3', 'goalsAgainst' => '2', 'points' => '2'],
-                    ['id' => 4, 'name' => 'TO', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => '2', 'goalsAgainst' => '3', 'points' => '0']
+                    ['id' => 1, 'name' => 'MU', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 2, 'name' => 'MC', 'matchesPlayed' => '3', 'matchesWin' => '1', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 3, 'name' => 'LI', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => 3, 'goalsAgainst' => 2, 'points' => '2'],
+                    ['id' => 4, 'name' => 'TO', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => 2, 'goalsAgainst' => 3, 'points' => '0']
                 ],
                 'matches' => [
-                    ['id' => 6, 'name' => '6', 'status' => 'incoming', 'team1' => 'MU', 'team2' => 'MC', 'start' => '09:00', 'team1Score' => '', 'team2Score' => ''],
-                    ['id' => 7, 'name' => '7', 'status' => 'finish', 'team1' => 'MU', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '1'],
-                    ['id' => 8, 'name' => '8', 'status' => 'finish', 'team1' => 'MC', 'team2' => 'LI', 'start' => '', 'team1Score' => '3', 'team2Score' => '2'],
-                    ['id' => 9, 'name' => '9', 'status' => 'finish', 'team1' => 'MU', 'team2' => 'MC', 'start' => '', 'team1Score' => '2', 'team2Score' => '2'],
-                    ['id' => 10, 'name' => '10', 'status' => 'finish', 'team1' => 'LI', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '2'],
+                    ['id' => 6, 'name' => '6', 'status' => 'A venir', 'team1' => 'MU', 'team2' => 'MC', 'start' => '09:00', 'team1Score' => null, 'team2Score' => null],
+                    ['id' => 7, 'name' => '7', 'status' => 'Terminé', 'team1' => 'MU', 'team2' => 'TO', 'start' => '08:00', 'team1Score' => 3, 'team2Score' => 1],
+                    ['id' => 8, 'name' => '8', 'status' => 'Terminé', 'team1' => 'MC', 'team2' => 'LI', 'start' => '11:00', 'team1Score' => 3, 'team2Score' => 2],
+                    ['id' => 9, 'name' => '9', 'status' => 'Terminé', 'team1' => 'MU', 'team2' => 'MC', 'start' => '10:00', 'team1Score' => 2, 'team2Score' => 2],
+                    ['id' => 10, 'name' => '10', 'status' => 'Terminé', 'team1' => 'LI', 'team2' => 'TO', 'start' => '15:00', 'team1Score' => 3, 'team2Score' => 2],
                 ]
             ]);
             break;
@@ -176,17 +176,17 @@ Route::get('{event_id}/tournament/{tournament_id}/{group_matchs_id}', function (
                 'name'      => 'Loutre',
                 'type'      => 'Poule',
                 'teams' => [
-                    ['id' => 1, 'name' => 'MU', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => '2', 'goalsAgainst' => '2', 'points' => '5'],
-                    ['id' => 2, 'name' => 'MC', 'matchesPlayed' => '3', 'matchesWin' => '1', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => '2', 'goalsAgainst' => '2', 'points' => '5'],
-                    ['id' => 3, 'name' => 'LI', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => '3', 'goalsAgainst' => '2', 'points' => '2'],
-                    ['id' => 4, 'name' => 'TO', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => '2', 'goalsAgainst' => '3', 'points' => '0']
+                    ['id' => 1, 'name' => 'MU', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 2, 'name' => 'MC', 'matchesPlayed' => '3', 'matchesWin' => '1', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 3, 'name' => 'LI', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => 3, 'goalsAgainst' => 2, 'points' => '2'],
+                    ['id' => 4, 'name' => 'TO', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => 2, 'goalsAgainst' => 3, 'points' => '0']
                 ],
                 'matches' => [
-                    ['id' => 11, 'name' => '11', 'status' => 'incoming', 'team1' => 'MU', 'team2' => 'MC', 'start' => '09:00', 'team1Score' => '', 'team2Score' => ''],
-                    ['id' => 12, 'name' => '12', 'status' => 'finish', 'team1' => 'MU', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '1'],
-                    ['id' => 13, 'name' => '13', 'status' => 'finish', 'team1' => 'MC', 'team2' => 'LI', 'start' => '', 'team1Score' => '3', 'team2Score' => '2'],
-                    ['id' => 14, 'name' => '14', 'status' => 'finish', 'team1' => 'MU', 'team2' => 'MC', 'start' => '', 'team1Score' => '2', 'team2Score' => '2'],
-                    ['id' => 15, 'name' => '15', 'status' => 'finish', 'team1' => 'LI', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '2'],
+                    ['id' => 11, 'name' => '11', 'status' => 'A venir', 'team1' => 'MU', 'team2' => 'MC', 'start' => '09:00', 'team1Score' => null, 'team2Score' => null],
+                    ['id' => 12, 'name' => '12', 'status' => 'Terminé', 'team1' => 'MU', 'team2' => 'TO', 'start' => '11:00', 'team1Score' => 3, 'team2Score' => 1],
+                    ['id' => 13, 'name' => '13', 'status' => 'Terminé', 'team1' => 'MC', 'team2' => 'LI', 'start' => '15:00', 'team1Score' => 3, 'team2Score' => 2],
+                    ['id' => 14, 'name' => '14', 'status' => 'Terminé', 'team1' => 'MU', 'team2' => 'MC', 'start' => '16:00', 'team1Score' => 2, 'team2Score' => 2],
+                    ['id' => 15, 'name' => '15', 'status' => 'Terminé', 'team1' => 'LI', 'team2' => 'TO', 'start' => '17:30', 'team1Score' => 3, 'team2Score' => 2],
                 ]
             ]);
             break;
@@ -196,17 +196,17 @@ Route::get('{event_id}/tournament/{tournament_id}/{group_matchs_id}', function (
                 'name'      => 'Loutre',
                 'type'      => 'Poule',
                 'teams' => [
-                    ['id' => 1, 'name' => 'MU', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => '2', 'goalsAgainst' => '2', 'points' => '5'],
-                    ['id' => 2, 'name' => 'MC', 'matchesPlayed' => '3', 'matchesWin' => '1', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => '2', 'goalsAgainst' => '2', 'points' => '5'],
-                    ['id' => 3, 'name' => 'LI', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => '3', 'goalsAgainst' => '2', 'points' => '2'],
-                    ['id' => 4, 'name' => 'TO', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => '2', 'goalsAgainst' => '3', 'points' => '0']
+                    ['id' => 1, 'name' => 'MU', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 2, 'name' => 'MC', 'matchesPlayed' => '3', 'matchesWin' => '1', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 3, 'name' => 'LI', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '2', 'matchesLost' => '0', 'goalsFor' => 3, 'goalsAgainst' => 2, 'points' => '2'],
+                    ['id' => 4, 'name' => 'TO', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => 2, 'goalsAgainst' => 3, 'points' => '0']
                 ],
                 'matches' => [
-                    ['id' => 16, 'name' => '16', 'status' => 'incoming', 'team1' => 'MU', 'team2' => 'MC', 'start' => '09:00', 'team1Score' => '', 'team2Score' => ''],
-                    ['id' => 17, 'name' => '17', 'status' => 'finish', 'team1' => 'MU', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '1'],
-                    ['id' => 18, 'name' => '18', 'status' => 'finish', 'team1' => 'MC', 'team2' => 'LI', 'start' => '', 'team1Score' => '3', 'team2Score' => '2'],
-                    ['id' => 19, 'name' => '19', 'status' => 'finish', 'team1' => 'MU', 'team2' => 'MC', 'start' => '', 'team1Score' => '2', 'team2Score' => '2'],
-                    ['id' => 20, 'name' => '20', 'status' => 'finish', 'team1' => 'LI', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '2'],
+                    ['id' => 16, 'name' => '16', 'status' => 'A venir', 'team1' => 'MU', 'team2' => 'MC', 'start' => '09:00', 'team1Score' => null, 'team2Score' => null],
+                    ['id' => 17, 'name' => '17', 'status' => 'Terminé', 'team1' => 'MU', 'team2' => 'TO', 'start' => '16:00', 'team1Score' => 3, 'team2Score' => 1],
+                    ['id' => 18, 'name' => '18', 'status' => 'Terminé', 'team1' => 'MC', 'team2' => 'LI', 'start' => '08:30', 'team1Score' => 3, 'team2Score' => 2],
+                    ['id' => 19, 'name' => '19', 'status' => 'Terminé', 'team1' => 'MU', 'team2' => 'MC', 'start' => '09:15', 'team1Score' => 2, 'team2Score' => 2],
+                    ['id' => 20, 'name' => '20', 'status' => 'Terminé', 'team1' => 'LI', 'team2' => 'TO', 'start' => '10:00', 'team1Score' => 3, 'team2Score' => 2],
                 ]
             ]);
             break;
@@ -216,16 +216,16 @@ Route::get('{event_id}/tournament/{tournament_id}/{group_matchs_id}', function (
                 'name'      => 'Elimination',
                 'type'      => 'Elimination',
                 'teams' => [
-                    ['id' => 1, 'name' => 'MU', 'matchesPlayed' => '1', 'matchesWin' => '1', 'matchesDraw' => '0', 'matchesLost' => '0', 'goalsFor' => '2', 'goalsAgainst' => '2', 'points' => '5'],
-                    ['id' => 2, 'name' => 'MC', 'matchesPlayed' => '2', 'matchesWin' => '1', 'matchesDraw' => '0', 'matchesLost' => '1', 'goalsFor' => '2', 'goalsAgainst' => '2', 'points' => '5'],
-                    ['id' => 3, 'name' => 'LI', 'matchesPlayed' => '1', 'matchesWin' => '1', 'matchesDraw' => '0', 'matchesLost' => '0', 'goalsFor' => '3', 'goalsAgainst' => '2', 'points' => '2'],
-                    ['id' => 4, 'name' => 'TO', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => '2', 'goalsAgainst' => '3', 'points' => '0']
+                    ['id' => 1, 'name' => 'MU', 'matchesPlayed' => '1', 'matchesWin' => '1', 'matchesDraw' => '0', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 2, 'name' => 'MC', 'matchesPlayed' => '2', 'matchesWin' => '1', 'matchesDraw' => '0', 'matchesLost' => '1', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 3, 'name' => 'LI', 'matchesPlayed' => '1', 'matchesWin' => '1', 'matchesDraw' => '0', 'matchesLost' => '0', 'goalsFor' => 3, 'goalsAgainst' => 2, 'points' => '2'],
+                    ['id' => 4, 'name' => 'TO', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => 2, 'goalsAgainst' => 3, 'points' => '0']
                 ],
                 'matches' => [
-                    ['id' => 21, 'name' => 'demi-final', 'status' => 'finish', 'team1' => 'MU', 'team2' => 'MC', 'start' => '', 'team1Score' => '3', 'team2Score' => '1'],
-                    ['id' => 22, 'name' => 'demi-final', 'status' => 'finish', 'team1' => 'LI', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '1'],
-                    ['id' => 23, 'name' => 'petite finale', 'status' => 'finish', 'team1' => 'MC', 'team2' => 'TO', 'start' => '', 'team1Score' => '3', 'team2Score' => '2'],
-                    ['id' => 24, 'name' => 'grande finale', 'status' => 'incoming', 'team1' => 'MU', 'team2' => 'LI', 'start' => '12:30', 'team1Score' => '', 'team2Score' => '']
+                    ['id' => 21, 'name' => 'Demi-finale',   'status' => 'Terminé', 'team1' => 'MU', 'team2' => 'MC', 'start' => '11:00', 'team1Score' => 3, 'team2Score' => 1],
+                    ['id' => 22, 'name' => 'Demi-finale',   'status' => 'Terminé', 'team1' => 'LI', 'team2' => 'TO', 'start' => '17:00', 'team1Score' => 3, 'team2Score' => 1],
+                    ['id' => 23, 'name' => 'Petite finale', 'status' => 'Terminé', 'team1' => 'MC', 'team2' => 'TO', 'start' => '10:15', 'team1Score' => 3, 'team2Score' => 2],
+                    ['id' => 24, 'name' => 'Grande finale', 'status' => 'A venir', 'team1' => 'MU', 'team2' => 'LI', 'start' => '12:30', 'team1Score' => null, 'team2Score' => null]
                 ]
             ]);
             break;
@@ -277,13 +277,13 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Football',
                 'matches' => [
-                    ['id' => 1, 'status' => 'incoming', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'finish', 'team2' => 'LI', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'LI', 'start' => '10:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
 
-                    ['id' => 2, 'status' => 'finish', 'team2' => 'Poney', 'start' => '', 'ownScore' => '12', 'team2Score' => '14', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'finish', 'team2' => 'Les Warriors', 'start' => '', 'ownScore' => '9', 'team2Score' => '3', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'incoming', 'team2' => 'PourquoiPas', 'start' => '16:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'finish', 'team2' => 'Test', 'start' => '', 'ownScore' => '2', 'team2Score' => '5', 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'Poney', 'start' => '10:30', 'ownScore' => 12, 'team2Score' => 14, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'Les Warriors', 'start' => '11:30', 'ownScore' => 9, 'team2Score' => 3, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'A venir', 'team2' => 'PourquoiPas', 'start' => '16:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'Test', 'start' => '17:00', 'ownScore' => 2, 'team2Score' => 5, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -291,7 +291,7 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
             return response()->json([
                 'id'    => 2,
                 'name'  => 'MC',
-                'status' => 'Eliminé',
+                'status' => 'Eliminée',
                 'participants' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
@@ -299,8 +299,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Basketball',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MU', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'LI', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MU', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'LI', 'start' => '10:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -316,8 +316,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '15:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -333,8 +333,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '11:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -350,8 +350,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '16:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -367,8 +367,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '08:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -384,8 +384,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '14:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -401,8 +401,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '13:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -418,8 +418,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '12:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -435,8 +435,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '14:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -452,8 +452,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '18:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -469,8 +469,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null, 'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '15:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
@@ -486,8 +486,8 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
                 ],
                 'sport'     => 'Unihockey',
                 'matches' => [
-                    ['id' => 1, 'status' => 'En cours', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => '', 'team2Score' => '', 'type' => 'Elimination'],
-                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '', 'ownScore' => '3', 'team2Score' => '1', 'type' => 'Elimination'],
+                    ['id' => 1, 'status' => 'A venir', 'team2' => 'MC', 'start' => '09:00', 'ownScore' => null, 'team2Score' => null,   'type' => 'Elimination'],
+                    ['id' => 2, 'status' => 'Terminé', 'team2' => 'MU', 'start' => '16:00', 'ownScore' => 3, 'team2Score' => 1, 'type' => 'Elimination'],
                 ]
             ]);
             break;
