@@ -33,7 +33,7 @@ Route::get('events', function (){
 
 
 //Get all the tournaments
-Route::get('{event_id}/tournaments', function ($event_id){
+Route::get('events/{event_id}/tournaments', function ($event_id){
     header('Access-Control-Allow-Origin: *');
     switch($event_id) {
         default:
@@ -72,7 +72,7 @@ Route::get('{event_id}/tournaments', function ($event_id){
 });
 
 //Route for a define tournament
-Route::get('{event_id}/tournament/{tournament_id}', function ($event_id, $tournament_id) {
+Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, $tournament_id) {
     header('Access-Control-Allow-Origin: *');
     switch($tournament_id) {
         case 1 :
@@ -157,7 +157,7 @@ Route::get('{event_id}/tournament/{tournament_id}', function ($event_id, $tourna
 });
 
 //Route for a define pool
-Route::get('{event_id}/tournament/{tournament_id}/{group_matchs_id}', function ($event_id, $tournament_id, $group_matchs_id) {
+Route::get('events/{event_id}/tournament/{tournament_id}/{group_matchs_id}', function ($event_id, $tournament_id, $group_matchs_id) {
     header('Access-Control-Allow-Origin: *');
     switch($group_matchs_id) {
         case 1 :
@@ -265,7 +265,7 @@ Route::get('{event_id}/tournament/{tournament_id}/{group_matchs_id}', function (
     }
 });
 
-Route::get('{event_id}/teams', function ($event_id){
+Route::get('events/{event_id}/teams', function ($event_id){
     header('Access-Control-Allow-Origin: *');
     switch($event_id) {
         default:
@@ -290,7 +290,7 @@ Route::get('{event_id}/teams', function ($event_id){
     }
 });
 
-Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
+Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
     header('Access-Control-Allow-Origin: *');
     switch($team_id) {
         case 1 :
@@ -567,7 +567,7 @@ Route::get('{event_id}/team/{team_id}', function ($event_id, $team_id){
 });
 
 //Get all the participants
-Route::get('{event_id}/participants', function ($event_id){
+Route::get('events/{event_id}/participants', function ($event_id){
     header('Access-Control-Allow-Origin: *');
     switch($event_id) {
         default:
@@ -592,7 +592,7 @@ Route::get('{event_id}/participants', function ($event_id){
 });
 
 //Get one participants
-Route::get('{event_id}/participant/{participant_id}', function ($event_id, $participant_id){
+Route::get('events/{event_id}/participant/{participant_id}', function ($event_id, $participant_id){
     header('Access-Control-Allow-Origin: *');
     switch($participant_id) {
         case 1:
