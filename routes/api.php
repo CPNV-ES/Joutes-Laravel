@@ -82,9 +82,9 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
                 'sport'     => 'Unihockey',
                 'type'      => 'Poules et éliminations',
                 'place'     => 'Salle de gym',
-                'winner'    => '',
-                'second'    => '',
-                'third'     => '',
+                'winner'    => ['id' => '', 'name' => ''],
+                'second'    => ['id' => '', 'name' => ''],
+                'third'     => ['id' => '', 'name' => ''],
                 'teams' => [
                     ['id' => 1, 'name' => 'Manchester United'],
                     ['id' => 2, 'name' => 'Manchester City'],
@@ -92,10 +92,10 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
                     ['id' => 4, 'name' => 'Tottenham']
                 ],
                 'group_matchs'    => [
-                    ['id' => 1, 'name' => 'Poney', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 2, 'name' => 'Cheval', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 3, 'name' => 'Loutre', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 4, 'name' => 'Vache', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 1, 'name' => 'Pool 1', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 2, 'name' => 'Pool 2', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 3, 'name' => 'Pool 3', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 4, 'name' => 'Pool 4', 'totalMatchs' => 6, 'playedMatchs' => 6],
                     ['id' => 5, 'name' => 'Elimination', 'totalMatchs' => 4, 'playedMatchs' => 4]
                 ]
             ]);
@@ -107,9 +107,9 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
                 'sport'     => 'Basketball',
                 'type'      => 'Eliminations',
                 'place'     => 'Terrain de foot',
-                'winner'    => '',
-                'second'    => '',
-                'third'     => 'Liverpool',
+                'winner' => ['id' => 1, 'name' => 'Manchester United'],
+                'second' => ['id' => 2, 'name' => 'Manchester City'],
+                'third' => ['id' => 4, 'name' => 'Tottenham'],
                 'teams' => [
                     ['id' => 1, 'name' => 'Manchester United'],
                     ['id' => 2, 'name' => 'Manchester City'],
@@ -117,11 +117,11 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
                     ['id' => 4, 'name' => 'Tottenham']
                 ],
                 'group_matchs'    => [
-                    ['id' => 1, 'name' => 'Poney', 'totalMatchs' => 6, 'playedMatchs' => 4],
-                    ['id' => 2, 'name' => 'Cheval', 'totalMatchs' => 6, 'playedMatchs' => 3],
-                    ['id' => 3, 'name' => 'Loutre', 'totalMatchs' => 6, 'playedMatchs' => 3],
-                    ['id' => 4, 'name' => 'Vache', 'totalMatchs' => 6, 'playedMatchs' => 5],
-                    ['id' => 5, 'name' => 'Elimination', 'totalMatchs' => 4, 'playedMatchs' => 0]
+                    ['id' => 1, 'name' => 'Pool 1', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 2, 'name' => 'Pool 2', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 3, 'name' => 'Pool 3', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 4, 'name' => 'Pool 4', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 6, 'name' => 'Elimination', 'totalMatchs' => 4, 'playedMatchs' => 4]
                 ]
             ]);
             break;
@@ -132,9 +132,9 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
                 'sport'     => 'Volley',
                 'type'      => 'Poules et éliminations',
                 'place'     => 'Piscine',
-                'winner'    => 'Manchester United',
-                'second'    => 'Manchester City',
-                'third'     => 'Tottenham',
+                'winner' => ['id' => '', 'name' => ''],
+                'second' => ['id' => '', 'name' => ''],
+                'third' => ['id' => 5, 'name' => 'Liverpool'],
                 'teams' => [
                     ['id' => 1,'name' => 'Manchester United'],
                     ['id' => 2,'name' => 'Manchester City'],
@@ -142,10 +142,10 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
                     ['id' => 4,'name' => 'Tottenham']
                 ],
                 'group_matchs'    => [
-                    ['id' => 1, 'name' => 'Poney', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 2, 'name' => 'Cheval', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 3, 'name' => 'Loutre', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 4, 'name' => 'Vache', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 1, 'name' => 'Pool 1', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 2, 'name' => 'Pool 2', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 3, 'name' => 'Pool 3', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                    ['id' => 4, 'name' => 'Pool 4', 'totalMatchs' => 6, 'playedMatchs' => 6],
                     ['id' => 5, 'name' => 'Elimination', 'totalMatchs' => 4, 'playedMatchs' => 2]
                 ]
             ]);
@@ -163,7 +163,7 @@ Route::get('events/{event_id}/tournament/{tournament_id}/{group_matchs_id}', fun
         case 1 :
             return response()->json([
                 'id'        => 1,
-                'name'      => 'Poney',
+                'name'      => 'Pool 1',
                 'type'      => 'Poule',
                 'teams' => [
                     ['id' => 1, 'name' => 'Manchester United', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
@@ -183,7 +183,7 @@ Route::get('events/{event_id}/tournament/{tournament_id}/{group_matchs_id}', fun
         case 2 :
             return response()->json([
                 'id'        => 2,
-                'name'      => 'Cheval',
+                'name'      => 'Pool 2',
                 'type'      => 'Poule',
                 'teams' => [
                     ['id' => 1, 'name' => 'Manchester United', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
@@ -203,7 +203,7 @@ Route::get('events/{event_id}/tournament/{tournament_id}/{group_matchs_id}', fun
         case 3 :
             return response()->json([
                 'id'        => 3,
-                'name'      => 'Loutre',
+                'name'      => 'Pool 3',
                 'type'      => 'Poule',
                 'teams' => [
                     ['id' => 1, 'name' => 'Manchester United', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
@@ -222,8 +222,8 @@ Route::get('events/{event_id}/tournament/{tournament_id}/{group_matchs_id}', fun
             break;
         case 4 :
             return response()->json([
-                'id'        => 5,
-                'name'      => 'Loutre',
+                'id'        => 4,
+                'name'      => 'Pool 4',
                 'type'      => 'Poule',
                 'teams' => [
                     ['id' => 1, 'name' => 'Manchester United', 'matchesPlayed' => '3', 'matchesWin' => '2', 'matchesDraw' => '1', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
@@ -242,7 +242,7 @@ Route::get('events/{event_id}/tournament/{tournament_id}/{group_matchs_id}', fun
             break;
         case 5 :
             return response()->json([
-                'id'        => 4,
+                'id'        => 5,
                 'name'      => 'Elimination',
                 'type'      => 'Elimination',
                 'teams' => [
@@ -256,6 +256,25 @@ Route::get('events/{event_id}/tournament/{tournament_id}/{group_matchs_id}', fun
                     ['id' => 22, 'name' => 'Demi-finale',   'status' => 'Terminé', 'team1' => 'Liverpool', 'team2' => 'Tottenham', 'start' => '17:00', 'team1Score' => 3, 'team2Score' => 1],
                     ['id' => 23, 'name' => 'Petite finale', 'status' => 'Terminé', 'team1' => 'Manchester City', 'team2' => 'Tottenham', 'start' => '10:15', 'team1Score' => 3, 'team2Score' => 2],
                     ['id' => 24, 'name' => 'Grande finale', 'status' => 'A venir', 'team1' => 'Manchester United', 'team2' => 'Liverpool', 'start' => '12:30', 'team1Score' => null, 'team2Score' => null]
+                ]
+            ]);
+            break;
+        case 6 :
+            return response()->json([
+                'id'        => 6,
+                'name'      => 'Elimination',
+                'type'      => 'Elimination',
+                'teams' => [
+                    ['id' => 1, 'name' => 'Manchester United', 'matchesPlayed' => '1', 'matchesWin' => '1', 'matchesDraw' => '0', 'matchesLost' => '0', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 2, 'name' => 'Manchester City', 'matchesPlayed' => '2', 'matchesWin' => '1', 'matchesDraw' => '0', 'matchesLost' => '1', 'goalsFor' => 2, 'goalsAgainst' => 2, 'points' => '5'],
+                    ['id' => 3, 'name' => 'Liverpool', 'matchesPlayed' => '1', 'matchesWin' => '1', 'matchesDraw' => '0', 'matchesLost' => '0', 'goalsFor' => 3, 'goalsAgainst' => 2, 'points' => '2'],
+                    ['id' => 4, 'name' => 'Tottenham', 'matchesPlayed' => '2', 'matchesWin' => '0', 'matchesDraw' => '0', 'matchesLost' => '2', 'goalsFor' => 2, 'goalsAgainst' => 3, 'points' => '0']
+                ],
+                'matches' => [
+                    ['id' => 21, 'name' => 'Demi-finale',   'status' => 'Terminé', 'team1' => 'Manchester United', 'team2' => 'Manchester City', 'start' => '11:00', 'team1Score' => 3, 'team2Score' => 1],
+                    ['id' => 22, 'name' => 'Demi-finale',   'status' => 'Terminé', 'team1' => 'Liverpool', 'team2' => 'Tottenham', 'start' => '17:00', 'team1Score' => 3, 'team2Score' => 1],
+                    ['id' => 23, 'name' => 'Petite finale', 'status' => 'Terminé', 'team1' => 'Manchester City', 'team2' => 'Tottenham', 'start' => '10:15', 'team1Score' => 3, 'team2Score' => 2],
+                    ['id' => 24, 'name' => 'Grande finale', 'status' => 'Terminé', 'team1' => 'Manchester United', 'team2' => 'Liverpool', 'start' => '12:30', 'team1Score' => null, 'team2Score' => null]
                 ]
             ]);
             break;
@@ -298,7 +317,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    => 1,
                 'name'  => 'Manchester United',
                 'status' => 'Vainqueur',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier'],
@@ -325,7 +344,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    => 2,
                 'name'  => 'Manchester City',
                 'status' => 'Eliminée',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -345,7 +364,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    => 3,
                 'name'  => 'Liverpool',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -365,7 +384,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    => 4,
                 'name'  => 'WE',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -385,7 +404,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    => 5,
                 'name'  => 'BO',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -405,7 +424,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    => 6,
                 'name'  => 'CE',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -425,7 +444,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    => 7,
                 'name'  => 'LE',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -445,7 +464,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    => 8,
                 'name'  => 'PO',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -465,7 +484,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    => 9,
                 'name'  => 'NE',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -485,7 +504,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    => 10,
                 'name'  => 'RE',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -505,7 +524,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    =>  11,
                 'name'  => 'BR',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -525,7 +544,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    =>  12,
                 'name'  => 'AA',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
@@ -545,7 +564,7 @@ Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
                 'id'    =>  13,
                 'name'  => 'JU',
                 'status' => 'Participe',
-                'participants' => [
+                'members' => [
                     ['firstname' => 'Quentin', 'lastname' => 'Girard'],
                     ['firstname' => 'Malorie', 'lastname' => 'Genoud'],
                     ['firstname' => 'Stéphane', 'lastname' => 'Martignier']
