@@ -44,9 +44,9 @@ Route::get('events/{event_id}/tournaments', function ($event_id){
                         'name' => 'Tournoi Unihockey',
                         'sport' => 'Unihockey',
                         'place' => 'Salle de gym',
-                        'winner' => ['id' => '', 'name' => ''],
-                        'second' => ['id' => '', 'name' => ''],
-                        'third' => ['id' => '', 'name' => '']
+                        'winner' => null,
+                        'second' => null,
+                        'third' => null
                     ],
                     [
                         'id' => 2,
@@ -62,8 +62,8 @@ Route::get('events/{event_id}/tournaments', function ($event_id){
                         'name' => 'Tournoi Volley',
                         'sport' => 'Volley',
                         'place' => 'Piscine',
-                        'winner' => ['id' => '', 'name' => ''],
-                        'second' => ['id' => '', 'name' => ''],
+                        'winner' => null,
+                        'second' => null,
                         'third' => ['id' => 5, 'name' => 'Liverpool']
                     ]
                 ]
@@ -82,21 +82,40 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
                 'sport'     => 'Unihockey',
                 'type'      => 'Poules et éliminations',
                 'place'     => 'Salle de gym',
-                'winner'    => ['id' => '', 'name' => ''],
-                'second'    => ['id' => '', 'name' => ''],
-                'third'     => ['id' => '', 'name' => ''],
+                'winner'    => null,
+                'second'    => null,
+                'third'     => null,
                 'teams' => [
                     ['id' => 1, 'name' => 'Manchester United'],
                     ['id' => 2, 'name' => 'Manchester City'],
                     ['id' => 3, 'name' => 'Liverpool'],
                     ['id' => 4, 'name' => 'Tottenham']
                 ],
-                'group_matchs'    => [
-                    ['id' => 1, 'name' => 'Pool 1', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 2, 'name' => 'Pool 2', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 3, 'name' => 'Pool 3', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 4, 'name' => 'Pool 4', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 5, 'name' => 'Elimination', 'totalMatchs' => 4, 'playedMatchs' => 4]
+                'stages'    => [
+                    ['name' => 'Phase 1', 'pools' => [
+                        ['id' => 1, 'name' => 'Pool 1', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 2, 'name' => 'Pool 2', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 1, 'name' => 'Pool 3', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 1, 'name' => 'Pool 4', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 1, 'name' => 'Pool 5', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 1, 'name' => 'Pool 6', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 1, 'name' => 'Pool 7', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 1, 'name' => 'Pool 8', 'totalMatchs' => 6, 'playedMatchs' => 6]
+                    ]],
+                    ['name' => 'Phase 2', 'pools' => [
+                        ['id' => 3, 'name' => 'Pool 1', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 4, 'name' => 'Pool 2', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 3, 'name' => 'Pool 3', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 4, 'name' => 'Pool 4', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 3, 'name' => 'Pool 5', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 4, 'name' => 'Pool 6', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 3, 'name' => 'Pool 7', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 4, 'name' => 'Pool 8', 'totalMatchs' => 6, 'playedMatchs' => 6]
+                    ]],
+                    ['name' => 'Phase 3', 'pools' => [
+                        ['id' => 5, 'name' => 'Elimination vainquers', 'totalMatchs' => 4, 'playedMatchs' => 4],
+                        ['id' => 5, 'name' => 'Elimination perdants', 'totalMatchs' => 4, 'playedMatchs' => 4]
+                    ]]
                 ]
             ]);
             break;
@@ -116,12 +135,18 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
                     ['id' => 3, 'name' => 'Liverpool'],
                     ['id' => 4, 'name' => 'Tottenham']
                 ],
-                'group_matchs'    => [
-                    ['id' => 1, 'name' => 'Pool 1', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 2, 'name' => 'Pool 2', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 3, 'name' => 'Pool 3', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 4, 'name' => 'Pool 4', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 6, 'name' => 'Elimination', 'totalMatchs' => 4, 'playedMatchs' => 4]
+                'stages'    => [
+                    ['name' => 'Phase 1', 'pools' => [
+                        ['id' => 1, 'name' => 'Pool 1', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 2, 'name' => 'Pool 2', 'totalMatchs' => 6, 'playedMatchs' => 6]
+                    ]],
+                    ['name' => 'Phase 2', 'pools' => [
+                        ['id' => 3, 'name' => 'Pool 3', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 4, 'name' => 'Pool 4', 'totalMatchs' => 6, 'playedMatchs' => 6]
+                    ]],
+                    ['name' => 'Phase 3', 'pools' => [
+                        ['id' => 6, 'name' => 'Elimination', 'totalMatchs' => 4, 'playedMatchs' => 4]
+                    ]]
                 ]
             ]);
             break;
@@ -132,8 +157,8 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
                 'sport'     => 'Volley',
                 'type'      => 'Poules et éliminations',
                 'place'     => 'Piscine',
-                'winner' => ['id' => '', 'name' => ''],
-                'second' => ['id' => '', 'name' => ''],
+                'winner' => null,
+                'second' => null,
                 'third' => ['id' => 5, 'name' => 'Liverpool'],
                 'teams' => [
                     ['id' => 1,'name' => 'Manchester United'],
@@ -141,12 +166,18 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
                     ['id' => 3,'name' => 'Liverpool'],
                     ['id' => 4,'name' => 'Tottenham']
                 ],
-                'group_matchs'    => [
-                    ['id' => 1, 'name' => 'Pool 1', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 2, 'name' => 'Pool 2', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 3, 'name' => 'Pool 3', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 4, 'name' => 'Pool 4', 'totalMatchs' => 6, 'playedMatchs' => 6],
-                    ['id' => 5, 'name' => 'Elimination', 'totalMatchs' => 4, 'playedMatchs' => 2]
+                'stages'    => [
+                    ['name' => 'Phase 1', 'pools' => [
+                        ['id' => 1, 'name' => 'Pool 1', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 2, 'name' => 'Pool 2', 'totalMatchs' => 6, 'playedMatchs' => 6]
+                    ]],
+                    ['name' => 'Phase 2', 'pools' => [
+                        ['id' => 3, 'name' => 'Pool 3', 'totalMatchs' => 6, 'playedMatchs' => 6],
+                        ['id' => 4, 'name' => 'Pool 4', 'totalMatchs' => 6, 'playedMatchs' => 6]
+                    ]],
+                    ['name' => 'Phase 3', 'pools' => [
+                        ['id' => 5, 'name' => 'Elimination', 'totalMatchs' => 4, 'playedMatchs' => 4]
+                    ]]
                 ]
             ]);
             break;
