@@ -72,7 +72,7 @@ Route::get('events/{event_id}/tournaments', function ($event_id){
 });
 
 //Route for a define tournament
-Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, $tournament_id) {
+Route::get('events/{event_id}/tournaments/{tournament_id}', function ($event_id, $tournament_id) {
     header('Access-Control-Allow-Origin: *');
     switch($tournament_id) {
         case 1 :
@@ -188,9 +188,9 @@ Route::get('events/{event_id}/tournament/{tournament_id}', function ($event_id, 
 });
 
 //Route for a define pool
-Route::get('events/{event_id}/tournament/{tournament_id}/{group_matchs_id}', function ($event_id, $tournament_id, $group_matchs_id) {
+Route::get('events/{event_id}/tournaments/{tournament_id}/pools/{pool_id}', function ($event_id, $tournament_id, $pool_id) {
     header('Access-Control-Allow-Origin: *');
-    switch($group_matchs_id) {
+    switch($pool_id) {
         case 1 :
             return response()->json([
                 'id'        => 1,
@@ -340,7 +340,7 @@ Route::get('events/{event_id}/teams', function ($event_id){
     }
 });
 
-Route::get('events/{event_id}/team/{team_id}', function ($event_id, $team_id){
+Route::get('events/{event_id}/teams/{team_id}', function ($event_id, $team_id){
     header('Access-Control-Allow-Origin: *');
     switch($team_id) {
         case 1 :
@@ -642,7 +642,7 @@ Route::get('events/{event_id}/participants', function ($event_id){
 });
 
 //Get one participants
-Route::get('events/{event_id}/participant/{participant_id}', function ($event_id, $participant_id){
+Route::get('events/{event_id}/participants/{participant_id}', function ($event_id, $participant_id){
     header('Access-Control-Allow-Origin: *');
     switch($participant_id) {
         case 1:
